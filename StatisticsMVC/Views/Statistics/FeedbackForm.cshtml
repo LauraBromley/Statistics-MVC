@@ -1,0 +1,32 @@
+﻿@model StatisticsMVC.Models.Feedback
+
+@{
+    ViewBag.Title = "Feedback Form";
+    ViewBag.HomeLinkClass = "";
+    ViewBag.BayesLinkClass = "";
+    ViewBag.EstimatorsLinkClass = "";
+    ViewBag.RegressionLinkClass = "";
+    ViewBag.FeedbackLinkClass = "selected";
+}
+
+<p>Please feel free to leave feedback. Name and email address are optional fields, and will only be used if you request a reply.</p>
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Feedback</legend>
+    
+        <div class="feedbackLabel">@Html.LabelFor(model => model.Name)</div>
+        <div class="feedbackField">@Html.TextBoxFor(model => model.Name)</div>
+        <div class="feedbackLabel">@Html.LabelFor(model => model.EmailAddress)</div>
+        <div class="feedbackField">@Html.TextBoxFor(model => model.EmailAddress)</div>
+        <div class="feedbackLabel">@Html.LabelFor(model => model.Message)</div>
+        <div class="feedbackField">@Html.TextAreaFor(model => model.Message,new {cols=60, rows=10})</div> 
+        <div class="feedbackValid">@Html.ValidationMessageFor(model => model.Message)</div>   
+        <div class="feedbackLabel">@Html.LabelFor(model => model.ReplyRequested)</div>
+        <div class="feedbackField">@Html.CheckBoxFor(model => model.ReplyRequested)</div>
+        
+        <div class="feedbackSubmit"><input type="submit" value ="Submit" class="feedbackSubmit"/></div>
+
+    </fieldset>
+}

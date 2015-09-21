@@ -1,0 +1,24 @@
+﻿10 August 2015: [Estimators] Dice roll.
+10 August 2015: [Estimators] Dice roll.
+10 August 2015: [Regression] Data loaded.
+10 August 2015: [Bayes] Pie charts generated.
+10 August 2015: [Bayes] Pie charts generated.
+10 August 2015: [Bayes] Pie charts generated.
+16:07:33: [Estimators] Dice roll.
+16:07:33: [Estimators] Dice roll.
+16:07:34: [Estimators] Dice roll.
+10/08/2015 16:10:19: [Estimators] Dice roll.
+10/08/2015 16:10:19: [Estimators] Dice roll.
+10/08/2015 16:10:19: [Estimators] Dice roll.
+10/08/2015 16:10:19: [Estimators] Dice roll.
+10/08/2015 16:10:30: [Regression] Data loaded.
+10/08/2015 17:22:32: [Regression] Data loaded.
+12/08/2015 14:17:16: [Regression] Data loaded.
+12/08/2015 14:18:29: [Regression] Data loaded.
+12/08/2015 14:19:16: [Regression] Data loaded.
+12/08/2015 14:20:03: [Regression] Data loaded.
+12/08/2015 14:20:59: [Regression] Data loaded.
+12/08/2015 14:22:07: [Regression] Data loaded.
+12/08/2015 14:22:15: [Regression] Data loaded.
+13/08/2015 16:05:28: [Estimators] Dice roll.
+18/09/2015 15:08:21: [Estimators] Dice roll.

@@ -1,0 +1,35 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+     @Styles.Render("~/Content/css/styles.css")
+     @Scripts.Render("~/Content/lib/jquery/jquery-1.9.1.js")
+     @Scripts.Render("~/Content/lib/jquery/jquery.validate.js")
+     @Scripts.Render("~/Content/lib/jquery/jquery.validate.unobtrusive.js")
+     @Scripts.Render("~/Content/lib/knockout/knockout-3.3.0.js")
+     @Scripts.Render("~/Content/lib/d3/d3.min.js")
+     @Scripts.Render("~/Content/lib/d3/d3-tip.js")
+     @Scripts.Render("~/Content/app/logger.js")
+    
+</head>
+    <body>
+        <div id="topBar"><span>@ViewBag.Title</span>
+            <nav>
+                <ul id="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Statistics",new object { },new { @class = @ViewBag.HomeLinkClass})</li>
+                    <li>@Html.ActionLink("Bayes Theorem", "BayesTheorem", "Statistics",new object { },new { @class = @ViewBag.BayesLinkClass})</li>
+                    <li>@Html.ActionLink("Estimators", "Estimators", "Statistics",new object { },new { @class = @ViewBag.EstimatorsLinkClass})</li>
+                    <li>@Html.ActionLink("Regression", "Regression", "Statistics",new object { },new { @class = @ViewBag.RegressionLinkClass})</li>
+                    <li>@Html.ActionLink("Feedback", "FeedbackForm", "Statistics",new object { },new { @class = @ViewBag.FeedbackLinkClass})</li>
+                </ul>
+             </nav>
+        </div>
+        <div>
+            @RenderBody()
+        </div>
+    </body>
+</html>

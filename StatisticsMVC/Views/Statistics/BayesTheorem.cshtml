@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Bayes Theorem";
+    ViewBag.HomeLinkClass = "";
+    ViewBag.BayesLinkClass = "selected";
+    ViewBag.EstimatorsLinkClass = "";
+    ViewBag.RegressionLinkClass = "";
+    ViewBag.FeedbackLinkClass = "";
+}
+
+<p>Bayes Theorem is a way of determining the probability of a something being true, given some evidence. An example of this is a screening test for a disease, such as a mammogram used to test for breast cancer. The probability of the screening test providing a positive result for a person who has the disease is known as the <strong>specificity</strong>. The probability of a test providing a negative result for a person who does not have the disease is known as the <strong>sensitivity</strong>. An ideal screening test has a high specificity (to reduce the number of false positives) and a high sensitivity (to reduce the number of false negatives). We can use Bayes Theorem to calculate the probability of a person having cancer when the screening test result is positive. The probability of a person having breast cancer will depend on variables, the most obvious being gender. For the purposes of this example we will use the following statistics: </p>
+	
+	<ul>
+		<li>The chances of having breast cancer for women aged between 50 and 59 is 1 in 22, or 4.5% <sup><a class="references" href="http://www.cancerscreening.nhs.uk/breastscreen/breastcancer.html">[1]</a></sup>. This can be rephrased as (P|A)=0.045 where A = Breast Cancer. </li>
+		<li>Sensitivity of the mammogram test is 67.8% <sup><a class="references" href="http://emedicine.medscape.com/article/1945498-overview">[2]</a></sup>. P(+|A) = 0.678</li>
+		<li>Specificity of the mammogram test is 75%. P(-|!A) = 0.75</li>
+	</ul>
+
+	<p>Enter the figures in the table below to see the probability of the test returning a false negative or a false positive. The results might be surprising.</p>
+	
+	<p class="result" data-bind="visible: dataIsValid()">The chances of a <strong>true positive</strong> (the test providing a positive result when the person has the disease) is  <span data-bind="text: probTPPercentage"></span>%.</p> 
+	
+	<div class="section">
+		<h2>Probability</h2>	
+		<p>Enter values between 0 and 1 (eg for 30% enter 0.3):</p>
+		<table>
+			<tr>
+				<td class="notation">P(A)</td>
+				<td class="pdesc">Probability of A</td>
+				<td class="data"><input type="text" size="5" data-bind="value: probA"></td>
+			</tr>
+			<tr>
+				<td class="notation">P(+|A)</td>
+				<td class="pdesc">Sensitivity</td>
+				<td class="data"><input type="text" size="5" data-bind="value: sensitivity"></td>
+			</tr>
+			<tr>
+				<td class="notation">P(-|!A)</td>
+				<td class="pdesc">Specificity</td>
+				<td class="data"><input type="text" size="5" data-bind="value: specificity"></td>
+			</tr>
+		</table>	 
+	</div>
+	
+	 <div class="chart" data-bind="visible: dataIsValid()">
+		<div id="pieChartA"></div>
+	 </div>
+	<div class="section" data-bind="visible: dataIsValid()">
+		<h2>Results</h2>
+		<table>
+			<tr>
+				<td class="notation">P(A|+)</td>
+				<td class="pdesc">Probability of True Positive</td>
+				<td><span data-bind="text: probTP"></span></td>
+			</tr>
+			<tr>
+				<td class="notation">P(!A|+)</td>
+				<td class="pdesc">Probability of False Positive</td>
+				<td><span data-bind="text: probFP"></span></td>
+			</tr>
+			<tr>
+				<td class="notation">P(!A|-)</td>
+				<td class="pdesc">Probability of True Negative</td>
+				<td><span data-bind="text: probTN"></span></td>
+			</tr>
+			<tr>
+				<td class="notation">P(A|-)</td>
+				<td class="pdesc">Probability of False Negative</td>
+				<td><span data-bind="text: probFN"></span></td>
+			</tr>
+		</table>
+	 </div>
+	 
+	 <div class="chart" data-bind="visible: dataIsValid()">
+		<div id="pieChartTP"></div>
+	 </div>
+	 <div class="chart" data-bind="visible: dataIsValid()">
+		<div id="pieChartTN"></div>
+	 </div>
+	 
+	 <!-- This determines color of pie chart -->
+	 <div id="pieColor1"></div>
+	 <div id="pieColor2"></div>
+	 
+ @Scripts.Render("~/Content/charts/pieChart.js")
+ @Scripts.Render("~/Content/app/bayesModel.js")
+ @Scripts.Render("~/Content/app/bayes.js")

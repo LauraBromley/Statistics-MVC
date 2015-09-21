@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "Regression";
+    ViewBag.HomeLinkClass = "";
+    ViewBag.BayesLinkClass = "";
+    ViewBag.EstimatorsLinkClass = "";
+    ViewBag.RegressionLinkClass = "selected";
+    ViewBag.FeedbackLinkClass = "";
+}
+
+<p>Choose a dataset and load the data. Changing the X and Y variables will plot the data on a scatter chart. The regression coefficient and r values are calculated.</p>
+<p>
+    <select id="dataset" data-bind="options: dataSetList, optionsText: $data, value: selectedDataSet"></select>
+    <button id="btnLoadData" data-bind="click: LoadSampleData">Load Data</button>
+</p>
+
+   
+<div id="divRegressionVariables" data-bind="visible: dataLoaded">
+    <fieldset>
+        <legend>Variables</legend>
+
+        <p>Choose X Variable : <select id="xVariables" data-bind="options: variableListForCalc,
+                                                                optionsText: 'display',
+                                                                value: selectedVariableX,
+                                                                event: { change: DoCalculation }">
+                                </select>
+        </p>
+        <p>Choose Y Variable : <select id="yVariables" data-bind="options: variableListForCalc,
+                                                            optionsText: 'display',
+                                                            value: selectedVariableY,
+                                                            event: { change: DoCalculation }">
+                                </select>
+        </p>
+    </fieldset>
+</div>
+
+<div id="divRegressionValuesTable" data-bind="visible: dataLoaded">
+    <table>
+        <thead>
+            <tr>
+                <th class="notation">b</th>
+                <th class="notation">a</th>
+                <th class="notation">y = bx + a</th>
+                <th class="notation">r</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="notationData"><span data-bind="text: valueB"></span></td>
+                <td class="notationData"><span data-bind="text: valueA"></span></td>
+                <td class="notationData"><span data-bind="text: lineEq"></span></td>
+                <td class="notationData"><span data-bind="text: valueR"></span></td>
+            </tr>
+        </tbody>
+    </table>	
+    </div>
+   
+    <div id ="divRegressionScatterChart"></div> 
+
+
+<div id ="divRegressionData" data-bind="visible: dataLoaded">
+    <table id="DataTable">
+        <thead>
+            <tr data-bind="foreach: variableList">
+                <th><span data-bind="text: $data.display"></span></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: dataItems">
+            <tr data-bind="foreach: $parent.dataFields">
+               <td data-bind="text: $parent[$data]"></td>
+            </tr>
+        </tbody>
+    </table>	
+</div>
+
+
+
+@Scripts.Render("~/Content/charts/scatterChart.js")
+@Scripts.Render("~/Content/app/movieData.js")
+@Scripts.Render("~/Content/app/houseData.js")
+@Scripts.Render("~/Content/app/regressionCalculation.js")
+@Scripts.Render("~/Content/app/regression.js")
+
+<script>
+    $(document).ready(function () {
+
+        var model = new RegressionModel();
+        model.actionUrlGetData = "@Url.Action("GetData", "Statistics")";
+        ko.applyBindings(model);
+
+    });
+</script>

@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Estimators";
+    ViewBag.HomeLinkClass = "";
+    ViewBag.BayesLinkClass = "";
+    ViewBag.EstimatorsLinkClass = "selected";
+    ViewBag.RegressionLinkClass = "";
+    ViewBag.FeedbackLinkClass = "";
+}
+
+<div>   
+    <p>Number of rolls: 
+			<input type="text" size="3" class="numberInput" data-bind="value: rolls">
+			<button data-bind="click: rollTheDice">Roll</button>
+		</p>
+		
+		<p class = "dice" data-bind="foreach : resultData">
+			<span data-bind="text : $data"></span>
+		</p>	
+		
+		<table id="EstimateTable">
+			<thead>
+				<tr>
+					<th>Number</th>
+					<th>Count</th>
+					<th>Maximum Likelihood Estimate</th>
+					<th>Laplacian Estimate</th>
+				</tr>
+			</thead>
+			<tbody data-bind="foreach: estimates">
+				<tr>
+					<td class="dice"><span data-bind="text: number"></span></td>
+				    <td><span data-bind="text: count"></span></td>
+				    <td><span data-bind="text: mle"></span></td>
+				    <td><span data-bind="text: le"></span></td>
+				</tr>
+			</tbody>
+		</table>	 
+	</div>
+	
+<div id="BarChartContainer" data-bind="visible: chartVisible">
+    <div id="BarChart"></div>
+    <div id="BarChartLegend" >
+        <ul>
+            <li><span class="bar1"></span>Maximum Likelihood Estimate</li>
+            <li><span class="bar2"></span>Laplacian Estimate</li>
+        </ul>
+    </div>
+</div>
+
+ @Scripts.Render("~/Content/charts/barChart.js")
+ @Scripts.Render("~/Content/app/estimate.js")
+ @Scripts.Render("~/Content/app/estimatorsModel.js")
+ @Scripts.Render("~/Content/app/estimators.js")

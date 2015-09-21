@@ -1,0 +1,21 @@
+﻿@model StatisticsMVC.Models.Feedback
+
+@{
+    ViewBag.Title = "Feedback Result";
+    ViewBag.HomeLinkClass = "";
+    ViewBag.BayesLinkClass = "";
+    ViewBag.EstimatorsLinkClass = "";
+    ViewBag.RegressionLinkClass = "";
+    ViewBag.FeedbackLinkClass = "selected";
+}
+
+<p>Thanks for taking the time to submit feedback!</p>
+<div class="feedbackLabel">@Html.LabelFor(model => model.Name)</div>
+<div class="feedbackField">@Html.DisplayFor(model => model.Name)</div>
+<div class="feedbackLabel">@Html.LabelFor(model => model.EmailAddress)</div>
+<div class="feedbackField">@Html.DisplayFor(model => model.EmailAddress)</div>
+<div class="feedbackLabel">@Html.LabelFor(model => model.Message)</div>
+<div class="feedbackField">@Html.DisplayFor(model => model.Message)</div>
+<div class="feedbackLabel">@Html.LabelFor(model => model.ReplyRequested)</div>
+<div class="feedbackField">@Html.DisplayFor(model => model.ReplyRequested)</div>
+        

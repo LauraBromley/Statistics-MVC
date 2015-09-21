@@ -1,0 +1,10 @@
+﻿[{"movie":"The Shawshank Redemption","budget":25,"opening":0.73,"gross":28.34,"imdb":9.3,"rt":91,"mins":142},
+{"movie":"Forrest Gump","budget":55,"opening":24.45,"gross":330.25,"imdb":8.8,"rt":72,"mins":142},
+{"movie":"The Lion King","budget":45,"opening":1.59,"gross":422.78,"imdb":8.5,"rt":91,"mins":89},
+{"movie":"Interview with the Vampire","budget":60,"opening":36.39,"gross":105.26,"imdb":7.6,"rt":61,"mins":123},
+{"movie":"Pulp Fiction","budget":8,"opening":9.31,"gross":107.93,"imdb":8.9,"rt":93,"mins":154},
+{"movie":"Dumb & Dumber","budget":17,"opening":16.30,"gross":127.18,"imdb":7.3,"rt":66,"mins":107},
+{"movie":"Speed","budget":30,"opening":14.46,"gross":121.25,"imdb":7.2,"rt":93,"mins":116},
+{"movie":"Wyatt Earp","budget":63,"opening":7.54,"gross":25.05,"imdb":6.6,"rt":42,"mins":191},
+{"movie":"Street Fighter","budget":35,"opening":6.86,"gross":33.42,"imdb":3.7,"rt":12,"mins":102},
+{"movie":"Naked Gun 33 1/3","budget":30,"opening":13.20,"gross":51.13,"imdb":6.4,"rt":53,"mins":83}]

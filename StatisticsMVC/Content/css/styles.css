@@ -1,0 +1,315 @@
+﻿/* Dice Font */
+@font-face {
+	font-family: 'Conv_dice';
+	src: url('fonts/dice.eot');
+	src: local('☺'), url('fonts/dice.woff') format('woff'), url('fonts/dice.ttf') format('truetype'), url('fonts/dice.svg') format('svg'), url('fonts/dice.ttf') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+    margin: 20px;
+    font-family: proxima_nova_rgregular, Arial, Helvetica;
+    font-size: 14px;
+    line-height: 20px;
+    color: black;
+    background-color: white;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #7C868D;
+    margin: 5px;
+    padding: 10px;
+}
+
+tr {
+    font-size: 12px;   
+}
+
+th {
+    font-weight: bold;
+    background-color:  #696A81;
+	color: white;
+}
+
+rect {
+    stroke-width: 2;
+  }
+
+.pdesc{
+	background-color: #DDDDE0;
+}
+
+.notation{
+	font-family: 'Courier New';
+	background-color: #696A81;
+	color: white;
+}
+
+.notationData{
+	font-family: 'Courier New';
+}
+.data{
+	background-color: #DDDDE0;
+}
+
+.textInput{
+	width: 10px;
+}
+
+.todo {
+    font-style: italic;
+}
+
+.chart{
+	float: left;
+	margin: 40px;
+}
+
+.legend {
+    font-size: 12px;
+}
+
+.section {
+	width: 500px;
+	float: left;
+	clear: both;
+}
+
+.feedbackLabel {
+    float: left;
+    clear: both;
+    width: 150px;
+    padding: 5px;
+}
+
+.feedbackField {
+    float: left;
+    padding: 5px;
+}
+
+.feedbackSubmit {
+    float: left;
+    clear: both;
+    padding: 5px;
+}
+
+.feedbackValid {
+    float: left;
+    padding: 5px;
+    color: hotpink;
+}
+
+a.references:link, a.references:visited{
+	color: #696A81;
+	text-decoration: none;
+}
+
+.result {
+	background-color: #DDDDE0;
+	border: 1px solid #7C868D;
+	padding: 10px;
+}
+
+.piePiece:hover {
+	fill: #696A81;
+}
+
+.pieToolTip {
+  line-height: 1;
+  font-size: 12px;
+  padding: 12px;
+  color: black;
+  background-color: #DDDDE0;
+  border-radius: 2px;
+}
+
+.bar  {
+  fill: #68B8A8;
+}
+
+.bar2  {
+  fill: #F099AC;
+}
+
+.xaxis {
+		font-family:'Conv_dice',Sans-Serif;
+		color: #696A81;
+		font-size: 24px;
+		fill:#696A81;
+}
+
+.yaxis {
+		color: #696A81;
+		fill:#696A81;
+}
+
+path.domain {
+	fill: none;
+	stroke: #696A81;
+	stroke-width: 1px;
+}
+
+.barchart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.scatterAxisLabel {
+    font-size: 12px;
+    text-anchor: end;
+}
+
+.trendline {
+    stroke: #F099AC; 
+}
+
+.numberInput {
+	text-align: right;
+}
+
+.dice{
+		font-family:'Conv_dice',Sans-Serif;
+		color: #696A81;
+		font-size: 48px;	
+	}
+
+p.dice {
+	line-height: 150%;
+}
+#pieColor1{
+	color: #68B8A8;
+}
+
+#pieColor2{
+	color: #F099AC; 
+}
+
+#topBar {
+    background-color: #696A81;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0px;
+    width: 100%;
+    clear: both;
+    float: left
+}
+
+#topBar span {
+    color: white;
+    font-size: 2em;
+    float: left;
+    padding: 15px;
+}
+
+#menu {
+    float: right;
+    display: inline;
+    background-color: #696A81;
+    list-style-type: none;
+    padding: 0px;
+    margin-right: 10px;
+}
+
+#menu li{
+    display: inline;
+    padding: 0px;
+    margin: 2px;
+    float: left;
+}
+
+#menu a:link, a:visited {
+	display: block;
+	width: 150px;
+	padding: 10px;
+	cursor: pointer;
+	text-decoration: none;
+	background-color: #696A81;
+    border: 1px solid white;
+    color: white;
+	font-size: 18px;  
+	text-align: center;
+}
+
+#menu a.selected {
+    background-color: #F099AC;
+    border: 1px solid black;
+    color: black;
+}
+
+#menu a:hover{
+    color: black;
+    background-color:#68B8A8;
+    border: 1px solid black;
+}
+
+#EstimateTable{
+	float:left;
+}
+
+#BarChartContainer{
+	float:left;
+	margin:30px;
+}
+
+#BarChartLegend ul {
+	margin-left: 30px;
+}
+#BarChartLegend li {
+	color: #696A81;
+	font-size: 10px;
+	list-style: none;
+	clear: both;
+}
+ #BarChartLegend span {
+	font-size: 10px;
+	display: block;
+	margin: 4px;
+	width: 18px;
+	height:18px;
+	float:left;
+}
+
+ #BarChartLegend span.bar1  {
+  background-color: #68B8A8;
+}
+ #BarChartLegend span.bar2  {
+  background-color: #F099AC;
+}
+
+ #divRegressionData {
+     clear: both;
+ }
+
+ #divRegressionResults {
+     float: left;
+     margin: 20px;
+ }
+
+ #divRegressionVariables {
+     float: left;
+     width: 50%
+ }
+
+  #divRegressionValuesTable {
+     float: left;
+      margin: 20px;
+ }
+
+  #divRegressionScatterChart {
+      clear: both;
+  }
+
+
+
+
+
+  
+
