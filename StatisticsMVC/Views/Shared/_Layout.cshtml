@@ -20,11 +20,14 @@
         <div id="topBar"><span>@ViewBag.Title</span>
             <nav>
                 <ul id="menu">
-                    <li>@Html.ActionLink("Home", "Index", "Statistics",new object { },new { @class = @ViewBag.HomeLinkClass})</li>
-                    <li>@Html.ActionLink("Bayes Theorem", "BayesTheorem", "Statistics",new object { },new { @class = @ViewBag.BayesLinkClass})</li>
-                    <li>@Html.ActionLink("Estimators", "Estimators", "Statistics",new object { },new { @class = @ViewBag.EstimatorsLinkClass})</li>
-                    <li>@Html.ActionLink("Regression", "Regression", "Statistics",new object { },new { @class = @ViewBag.RegressionLinkClass})</li>
-                    <li>@Html.ActionLink("Feedback", "FeedbackForm", "Statistics",new object { },new { @class = @ViewBag.FeedbackLinkClass})</li>
+                    <li>@Html.ActionLink("Home", "Index", "Statistics",new object { },new { @class = @ViewBag.LinkCss["Index"]})</li>
+                    <li>@Html.ActionLink("Variance", "Variance", "Statistics",new object { },new { @class = @ViewBag.LinkCss["Variance"]})</li>
+                    <li>@Html.ActionLink("Confidence", "ConfidenceIntervals", "Statistics",new object { },new { @class = @ViewBag.LinkCss["ConfidenceIntervals"]})</li>
+                    <li>@Html.ActionLink("Probability", "Probability", "Statistics",new object { },new { @class = @ViewBag.LinkCss["Probability"]})</li>
+                    <li>@Html.ActionLink("Bayes Theorem", "BayesTheorem", "Statistics",new object { },new { @class = @ViewBag.LinkCss["BayesTheorem"]})</li>
+                    <li>@Html.ActionLink("Estimators", "Estimators", "Statistics",new object { },new { @class = @ViewBag.LinkCss["Estimators"]})</li>
+                    <li>@Html.ActionLink("Regression", "Regression", "Statistics",new object { },new { @class = @ViewBag.LinkCss["Regression"]})</li>
+                    <li>@Html.ActionLink("Feedback", "FeedbackForm", "Statistics",new object { },new { @class = @ViewBag.LinkCss["FeedbackForm"]})</li>
                 </ul>
              </nav>
         </div>

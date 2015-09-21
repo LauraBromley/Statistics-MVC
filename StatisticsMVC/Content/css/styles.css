@@ -210,11 +210,12 @@ p.dice {
 }
 
 #menu {
-    float: right;
+    float: left;
+    clear: both;
     display: inline;
     background-color: #696A81;
     list-style-type: none;
-    padding: 0px;
+    padding-left: 15px;
     margin-right: 10px;
 }
 

@@ -14,24 +14,49 @@ namespace StatisticsMVC.Controllers
         // GET: /Statistics/
         public ActionResult Index()
         {
+            ViewBag.LinkCss = LinkHelper.GenerateLinkClass("Index");
             return View();
         }
 
         // GET: /Statistics/BayesTheorem
         public ActionResult BayesTheorem()
         {
+            ViewBag.LinkCss = LinkHelper.GenerateLinkClass("BayesTheorem");
             return View();
         }
         
         // GET: /Statistics/Estimators
         public ActionResult Estimators()
         {
+            ViewBag.LinkCss = LinkHelper.GenerateLinkClass("Estimators");
             return View();
         }
 
         // GET: /Statistics/Regression
         public ActionResult Regression()
         {
+            ViewBag.LinkCss = LinkHelper.GenerateLinkClass("Regression");
+            return View();
+        }
+
+        // GET: /Statistics/Variance
+        public ActionResult Variance()
+        {
+            ViewBag.LinkCss = LinkHelper.GenerateLinkClass("Variance");
+            return View();
+        }
+
+        // GET: /Statistics/ConfidenceIntervals
+        public ActionResult ConfidenceIntervals()
+        {
+            ViewBag.LinkCss = LinkHelper.GenerateLinkClass("ConfidenceIntervals");
+            return View();
+        }
+
+        // GET: /Statistics/Probability
+        public ActionResult Probability()
+        {
+            ViewBag.LinkCss = LinkHelper.GenerateLinkClass("Probability");
             return View();
         }
 
@@ -57,6 +82,7 @@ namespace StatisticsMVC.Controllers
         //GET: /Statistics/FeedbackForm
         public ActionResult FeedbackForm()
         {
+            ViewBag.LinkCss = LinkHelper.GenerateLinkClass("FeedbackForm");
             var model = new Feedback();
             return View(model);
         }

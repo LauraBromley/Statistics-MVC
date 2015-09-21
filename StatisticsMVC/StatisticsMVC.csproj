@@ -119,6 +119,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\LinkHelper.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -167,6 +168,9 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Statistics\FeedbackForm.cshtml" />
     <Content Include="Views\Statistics\FeedbackResult.cshtml" />
+    <Content Include="Views\Statistics\Variance.cshtml" />
+    <Content Include="Views\Statistics\ConfidenceIntervals.cshtml" />
+    <Content Include="Views\Statistics\Probability.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\lib\jquery\jquery-1.9.1.min.map" />
