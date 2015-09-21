@@ -2,4 +2,91 @@
     ViewBag.Title = "Variance";
 }
 
-<p>General statistics - mean, variance and standard deviation</p>
+<p>This page deals with some of the most common statistics used: The mean, variance and standard deviation. 
+    Choose a data set and then choose a variable to see the results. </p>
+
+ <table>
+     <tr>
+         <td class="notation">Mean</td>
+         <td class="pdesc">Mean</td>
+         <td>Also known as the average. Calculated as the sum of the values in the data set divided by the number of items. </td>
+     </tr>
+     <tr>
+         <td class="notation">Variance</td>
+         <td class="pdesc">Variance</td>
+         <td>Determines how individual items in a data set differ from the mean. 
+             The variance of a population is calculated by first calculating the mean.
+             Then for each item in the data set, calculate the difference from the mean. Square those results and sum them.
+             Then divide this by the number of items.
+         </td>
+     </tr>
+     <tr>
+         <td class="notation">Std Dev</td>
+         <td class="pdesc">Standard Deviation</td>
+         <td>The standard deviation is calculated as the square root of the variance. </td>
+     </tr>
+    </table>	
+
+<p>Choose dataset:
+    <select id="dataset" data-bind="options: dataSetList, optionsText: $data, value: selectedDataSet"></select>
+    <button id="btnLoadData" data-bind="click: LoadSampleData">Load Data</button>
+</p>
+
+<div id="divVarianceVariables" data-bind="visible: dataLoaded">
+<p>Choose Variable : <select id="variables" data-bind="options: variableList,
+                                                        optionsText: 'display',
+                                                        value: selectedVariable,
+                                                        event: { change: DoCalculation }">
+                        </select>
+</p>
+</div>
+
+<div id="divVarianceValuesTable" data-bind="visible: dataLoaded">
+    <table>
+        <thead>
+            <tr>
+                <th class="notation">Mean</th>
+                <th class="notation">Variance</th>
+                <th class="notation">Std Dev</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="notationData"><span data-bind="text: mean"></span></td>
+                <td class="notationData"><span data-bind="text: variance"></span></td>
+                <td class="notationData"><span data-bind="text: stddev"></span></td>
+            </tr>
+        </tbody>
+    </table>	
+    </div>
+
+<div id ="divVarianceData" data-bind="visible: dataLoaded">
+    <table id="DataTable">
+        <thead>
+            <tr data-bind="foreach: variableList">
+                <th><span data-bind="text: $data.display"></span></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: dataItems">
+            <tr data-bind="foreach: $parent.dataFields">
+               <td data-bind="text: $parent[$data]"></td>
+            </tr>
+        </tbody>
+    </table>	
+</div>
+
+
+@Scripts.Render("~/Content/app/movieData.js")
+@Scripts.Render("~/Content/app/houseData.js")
+@Scripts.Render("~/Content/app/varianceCalculation.js")
+@Scripts.Render("~/Content/app/variance.js")
+
+<script>
+    $(document).ready(function () {
+
+        var model = new VarianceModel();
+        model.actionUrlGetData = "@Url.Action("GetData", "Statistics")";
+        ko.applyBindings(model);
+
+    });
+</script>

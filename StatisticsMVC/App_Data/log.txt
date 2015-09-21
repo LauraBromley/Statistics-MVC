@@ -22,3 +22,5 @@
 12/08/2015 14:22:15: [Regression] Data loaded.
 13/08/2015 16:05:28: [Estimators] Dice roll.
 18/09/2015 15:08:21: [Estimators] Dice roll.
+21/09/2015 15:58:39: [Estimators] Dice roll.
+21/09/2015 16:09:14: [Estimators] Dice roll.

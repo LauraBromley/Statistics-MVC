@@ -142,10 +142,12 @@
     <Content Include="Content\app\estimators.js" />
     <Content Include="Content\app\estimatorsModel.js" />
     <Content Include="Content\app\houseData.js" />
+    <Content Include="Content\app\variance.js" />
     <Content Include="Content\app\logger.js" />
     <Content Include="Content\app\movieData.js" />
     <Content Include="Content\app\regression.js" />
     <Content Include="Content\app\regressionCalculation.js" />
+    <Content Include="Content\app\varianceCalculation.js" />
     <Content Include="Content\charts\barChart.js" />
     <Content Include="Content\charts\pieChart.js" />
     <Content Include="Content\charts\scatterChart.js" />

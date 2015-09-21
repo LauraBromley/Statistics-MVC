@@ -299,7 +299,7 @@ p.dice {
      width: 50%
  }
 
-  #divRegressionValuesTable {
+   #divRegressionValuesTable {
      float: left;
       margin: 20px;
  }
@@ -307,6 +307,8 @@ p.dice {
   #divRegressionScatterChart {
       clear: both;
   }
+
+
 
 
 
