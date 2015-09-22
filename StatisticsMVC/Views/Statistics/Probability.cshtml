@@ -2,4 +2,92 @@
     ViewBag.Title = "Probability";
 }
 
-<p>Basic probability, multiplying probabilities, truth tables, binomial probabilities.</p>
+<p>Say we have a 6-sided dice... <span class = "dice">1 2 3 4 5 6</span> Assuming the dice is fair, there is an equal change of each result, so <span class="notationInText">P = 1/6</span>. </p>
+<p>The opposite of the probaility is 1-P, so the probability of rolling something other than a <span class="dice">4</span> is:  <span class="notationInText">1-1/6 = 5/6</span>.</p>
+<p>If we roll the dice three times what are the chances of getting <span class="dice">6</span> each time...? As each roll is an independent event the
+    probabilities are multiplied.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Roll 1</th>
+            <th>Roll 2</th>
+            <th>Roll 3</th>
+            <th>P</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="dice">6</td> 
+            <td class="dice">6</td> 
+            <td class="dice">6</td> 
+            <td class="notationData"> 1/6 * 1/6 * 1/6 = 0.005</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>When there are multiple rolls of a dice we can build truth tables that give us all the possibilities. 
+    In the above example there is only one case where each roll gives the same result. What if the question was - what are the chances
+    of rolling the dice and getting a <span class="dice">6</span> two out of three times? Now there are multiple possibilities since the dice that is not a <span class="dice">6</span> 
+    can be any of <span class="dice">1 2 3 4 5</span>. Also the result that is not a <span class="dice">6</span> could occur during any of the three rolls.
+</p>
+<p>The truth table contains all the possibilities:</p>
+
+<div id="divBinomProbTruthTable">
+<table>
+    <thead>
+        <tr>
+            <th>Roll 1</th>
+            <th>Roll 2</th>
+            <th>Roll 3</th>
+            <th>P</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: truthTable">
+		<tr>
+			<td class="dice"><span data-bind="text: roll1"></span></td>
+			<td class="dice"><span data-bind="text: roll2"></span></td>
+			<td class="dice"><span data-bind="text: roll3"></span></td>
+			<td class="notationData"><span data-bind="text: p"></span></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div id="divBinomProb">
+    <p>As you can see these truth tables grow big! We get 15 rows, and so the overall probability for this example is the sum of all the probabilities in the truth table.
+       Which is <span class="notationInText"> 0.005 * 15  = 0.07</span>
+        
+     <p>There is a mathematical formula to generate this which is called the Binomial Probability</p>
+    <p><span class="notationInText">b(x; n, P)</span> = <span class="notationInText">(n!/x!(n - x)!) * P^x * (1 - P)^n-x</span></p>
+    <ul>
+        <li> n is the total number of trials (we had 3 rolls)</li>
+        <li>P is the probability of success of an individual trial (P=1/6) </li>
+        <li>x is the number of successful results (x = 2)</li>
+    </ul>
+    <p><span class="notationInText">b(2; 3, 1/6)</span> = <span class="notationInText">(3!/2!(3 - 2)!) * (1/6)^3 * (1 - (1/6))^3-2</span> = <span class="notationInText"> 0.07</span></p>
+    
+    <p>Try it with different values:</p>
+    <table>
+    <thead>
+        <tr>
+            <th class="notation">n</th>
+            <th class="notation">x</th>
+            <th class="notation">P</th>
+            <th class="notation">b(x; n, P)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="pdesc"><input type="text" size="5" data-bind="value: n"></td> 
+            <td class="pdesc"><input type="text" size="5" data-bind="value: x"></td> 
+            <td class="pdesc"><input type="text" size="5" data-bind="value: p"></td> 
+            <td class="notationData"><span data-bind="text: result"></span></td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+
+@Scripts.Render("~/Content/app/probabilityModel.js")
+@Scripts.Render("~/Content/app/probability.js")

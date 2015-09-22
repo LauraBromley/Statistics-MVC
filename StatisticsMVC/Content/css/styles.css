@@ -50,6 +50,14 @@ rect {
 	color: white;
 }
 
+.notationInText{
+	font-family: 'Courier New';
+	background-color: #DDDDE0;
+	color: black;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
 .notationData{
 	font-family: 'Courier New';
 }
@@ -182,6 +190,11 @@ path.domain {
 p.dice {
 	line-height: 150%;
 }
+
+span.dice {
+    font-size: 36px;
+}
+
 #pieColor1{
 	color: #68B8A8;
 }
@@ -299,14 +312,29 @@ p.dice {
      width: 50%
  }
 
-   #divRegressionValuesTable {
-     float: left;
-      margin: 20px;
- }
+#divRegressionValuesTable {
+    float: left;
+    margin: 20px;
+}
 
-  #divRegressionScatterChart {
-      clear: both;
-  }
+#divRegressionScatterChart {
+    clear: both;
+}
+
+#divBinomProbTruthTable {
+    float: left;
+}
+
+#divBinomProb {
+    float: left;
+    width: 50%;
+    margin: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid #7C868D;
+}
 
 
 

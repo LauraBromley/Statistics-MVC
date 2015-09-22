@@ -142,6 +142,8 @@
     <Content Include="Content\app\estimators.js" />
     <Content Include="Content\app\estimatorsModel.js" />
     <Content Include="Content\app\houseData.js" />
+    <Content Include="Content\app\probability.js" />
+    <Content Include="Content\app\probabilityModel.js" />
     <Content Include="Content\app\variance.js" />
     <Content Include="Content\app\logger.js" />
     <Content Include="Content\app\movieData.js" />
