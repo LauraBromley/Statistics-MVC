@@ -125,7 +125,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Feedback.cs" />
-    <Compile Include="Models\Stats.cs" />
+    <Compile Include="Models\IDataRepository.cs" />
+    <Compile Include="Models\Log.cs" />
+    <Compile Include="Models\FileDataRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -134,7 +136,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="App_Data\feedback.txt" />
     <Content Include="App_Data\house_data.txt" />
-    <Content Include="App_Data\log.txt" />
     <Content Include="App_Data\movie_data.txt" />
     <Content Include="Content\app\bayes.js" />
     <Content Include="Content\app\bayesModel.js" />
@@ -173,7 +174,6 @@
     <Content Include="Views\Statistics\FeedbackForm.cshtml" />
     <Content Include="Views\Statistics\FeedbackResult.cshtml" />
     <Content Include="Views\Statistics\Variance.cshtml" />
-    <Content Include="Views\Statistics\ConfidenceIntervals.cshtml" />
     <Content Include="Views\Statistics\Probability.cshtml" />
   </ItemGroup>
   <ItemGroup>

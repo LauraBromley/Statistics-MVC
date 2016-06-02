@@ -46,13 +46,6 @@ namespace StatisticsMVC.Controllers
             return View();
         }
 
-        // GET: /Statistics/ConfidenceIntervals
-        public ActionResult ConfidenceIntervals()
-        {
-            ViewBag.LinkCss = LinkHelper.GenerateLinkClass("ConfidenceIntervals");
-            return View();
-        }
-
         // GET: /Statistics/Probability
         public ActionResult Probability()
         {
@@ -63,19 +56,11 @@ namespace StatisticsMVC.Controllers
         // GET: /Statistics/GetData?dataset=Movies
         public ActionResult GetData(string dataSet)
         {
-            string dataFile;
-            if (dataSet == "Movies")
-                dataFile = "~/App_Data/movie_data.txt";
-            else if (dataSet == "Houses")
-                dataFile = "~/App_Data/house_data.txt";
-            else
-            {
+            var model = new FileDataRepository();
+            var data = model.GetSampleData(dataSet);
+            if (string.IsNullOrEmpty(data))
                 return null;
-            }
-
-            var path = HttpContext.Server.MapPath(dataFile);
-            var model = new Stats();
-            var result = Json(model.GetSampleData(path), JsonRequestBehavior.AllowGet);
+            var result = Json(data, JsonRequestBehavior.AllowGet);
             return result;
         }
 
@@ -91,21 +76,17 @@ namespace StatisticsMVC.Controllers
         [HttpPost]
         public ActionResult FeedbackForm(Feedback info)
         {
-            // store feedback
-            var path = HttpContext.Server.MapPath("~/App_Data/feedback.txt");
-            var model = new Stats();
-            model.AddFeedback(path, info);
+            var model = new FileDataRepository();
+            model.AddFeedback(info);
             return View("FeedbackResult", info);
         }
-
 
         // POST: /Statistics/AddLogMessage
         [HttpPost]
         public ActionResult AddLogMessage(string location, string message)
         {
-            var path = HttpContext.Server.MapPath("~/App_Data/log.txt");
-            var model = new Stats();
-            model.AddLogMessage(path, location, message);
+            var model = new Log();
+            model.AddLogMessage(location, message);
             return null;
         }
 

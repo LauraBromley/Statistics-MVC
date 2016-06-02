@@ -13,7 +13,6 @@ namespace StatisticsMVC.Controllers
                 "Index",
                 "FeedbackForm",
                 "BayesTheorem",
-                "ConfidenceIntervals",
                 "Estimators", 
                 "Probability", 
                 "Regression", 

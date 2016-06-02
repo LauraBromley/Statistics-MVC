@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatisticsMVC", "StatisticsMVC\StatisticsMVC.csproj", "{8C039DD3-B6D7-4B7B-82DB-D35545520B3B}"
 EndProject
 Global
