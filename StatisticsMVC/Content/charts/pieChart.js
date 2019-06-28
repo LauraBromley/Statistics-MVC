@@ -4,6 +4,8 @@ var PieChartModule = (function () {
 
 	pcObject.drawPieChart = function (divId, p, label1, label2, color1, color2) {
 
+        var maxWidth = Math.min(350, window.innerWidth);
+
 		var segment1 = p;
 		var segment2 = 1 - p;
 		var dataset = [{label: label1, value: segment1}, {label: label2, value: segment2}];
@@ -12,7 +14,17 @@ var PieChartModule = (function () {
 		var radius = 100;
 		var widthInclLedgend = 350;
 		var legendRectSize = 18;
-		var legendSpacing = 4;
+        var legendSpacing = 4;
+
+        if (maxWidth - 350) {
+            width = 100;
+            height = 100;
+            radius = 50;
+            widthInclLedgend = maxWidth-50;
+            legendRectSize = 10;
+            legendSpacing = 4;
+        }
+
 
 		var color = d3.scale.ordinal()
 			.range([color1, color2]);

@@ -181,11 +181,11 @@ path.domain {
 	text-align: right;
 }
 
-.dice{
+.dice {
 		font-family:'Conv_dice',Sans-Serif;
 		color: #696A81;
 		font-size: 48px;	
-	}
+}
 
 p.dice {
 	line-height: 150%;
@@ -336,9 +336,37 @@ span.dice {
     border: 1px solid #7C868D;
 }
 
+@media (max-width: 767px) {
 
+    #menu a:link, a:visited {
+        font-size: 12px;
+        width: 60px;
+        padding-left: 0px;
+    }
 
+    #divBinomProb {
+        width: 80%;
+        margin: 0px;
+    }
 
+    #divVarianceData {
+        overflow-x: scroll;
+    }
+
+    #divRegressionData {
+        overflow-x: scroll;
+    }
+
+    .section {
+        width: 300px;
+        float: left;
+    }
+
+    .sds {
+        overflow-x: scroll;
+    }
+
+}
 
 
 

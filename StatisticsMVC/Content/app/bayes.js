@@ -24,8 +24,8 @@
 			PieChartModule.drawPieChart("#pieChartTN", tn, "True Negative", "False Negative", color1, color2);
 		}
 
-		var log = new Logger();
-	    log.LogMessage("Bayes", "Pie charts generated.");
+        var log = new Logger();
+        log.LogMessage("Bayes", "Pie charts generated.");
 	};
 
     // Create the view model and tell Knockout to apply the data-bindings.

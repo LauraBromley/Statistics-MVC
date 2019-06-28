@@ -2,10 +2,15 @@ var BarChartModule = (function () {
 	'use strict';
 	var bcObject = {};
 
-	bcObject.drawBarChart = function (divId, data, yAxisLabel) {
-		var margin = {top: 20, right: 20, bottom: 30, left: 50},
-			width = 500 - margin.left - margin.right,
-			height = 300 - margin.top - margin.bottom;
+    bcObject.drawBarChart = function (divId, data) {
+
+        var maxWidth = Math.min(500, window.innerWidth-50);
+
+        var margin = { top: 20, right: 20, bottom: 30, left: 50},
+            width = maxWidth - margin.left - margin.right,
+            height = 300 - margin.top - margin.bottom;
+
+        console.log('inner width', window.innerWidth);
 
 		var legendRectSize = 18;
 		var legendSpacing = 4;

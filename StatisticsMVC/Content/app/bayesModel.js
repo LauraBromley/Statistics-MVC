@@ -16,8 +16,8 @@ function BayesViewModel() {
 
 	var _validData = function (probA, sens, spec) {
 		return (probA > 0 && probA < 1) &&
-			   (sens > 0 && sens < 1) &&
-			   (spec > 0 && spec < 1);
+                (sens > 0 && sens < 1) &&
+                (spec > 0 && spec < 1);
 	};
 
 	self.probA = ko.observable(0.0);
@@ -25,9 +25,7 @@ function BayesViewModel() {
 	self.specificity = ko.observable(0.0);
 
 	self.probTP = ko.computed(function () {
-		var result = _calculateTP(this.probA(),
-						   this.sensitivity(),
-						   this.specificity());
+		var result = _calculateTP(this.probA(), this.sensitivity(), this.specificity());
 		return +result.toFixed(3);
 	}, this);
 
@@ -37,9 +35,7 @@ function BayesViewModel() {
 	}, this);
 
 	self.probTN = ko.computed(function () {
-		var result = _calculateTN(this.probA(),
-							   this.sensitivity(),
-							   this.specificity());
+		var result = _calculateTN(this.probA(), this.sensitivity(), this.specificity());
 		return +result.toFixed(3);
 	}, this);
 
@@ -50,9 +46,7 @@ function BayesViewModel() {
 
 
 	self.dataIsValid = ko.computed(function () {
-		return _validData(this.probA(),
-						  this.sensitivity(),
-						  this.specificity());
+		return _validData(this.probA(), this.sensitivity(), this.specificity());
 	}, this);
 
 	self.probTPPercentage = ko.computed(function () {

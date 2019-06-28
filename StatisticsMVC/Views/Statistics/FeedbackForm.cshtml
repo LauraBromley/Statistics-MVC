@@ -16,7 +16,7 @@
         <div class="feedbackLabel">@Html.LabelFor(model => model.EmailAddress)</div>
         <div class="feedbackField">@Html.TextBoxFor(model => model.EmailAddress)</div>
         <div class="feedbackLabel">@Html.LabelFor(model => model.Message)</div>
-        <div class="feedbackField">@Html.TextAreaFor(model => model.Message,new {cols=60, rows=10})</div> 
+        <div class="feedbackField">@Html.TextAreaFor(model => model.Message,new {cols=40, rows=10})</div> 
         <div class="feedbackValid">@Html.ValidationMessageFor(model => model.Message)</div>   
         <div class="feedbackLabel">@Html.LabelFor(model => model.ReplyRequested)</div>
         <div class="feedbackField">@Html.CheckBoxFor(model => model.ReplyRequested)</div>

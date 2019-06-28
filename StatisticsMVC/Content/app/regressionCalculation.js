@@ -2,13 +2,13 @@
     "use strict";
     var self = this;
 
-    var calculateMean = function(values) {
+    var calculateMean = function (values) {
         var sum = 0;
         for (var i = 0; i < values.length; i++) {
             sum += values[i];
         }
         return sum / values.length;
-    }
+    };
 
     var calculateDiffs = function (xValues, yValues) {
 
@@ -19,11 +19,11 @@
         for (var i = 0; i < xValues.length; i++) {
             var diffX = xValues[i] - meanX;
             var diffY = yValues[i] - meanY;
-            sumOfDiffXSquared += Math.pow(diffX,2);
-            sumOfDiffYSquared += Math.pow(diffY,2);
+            sumOfDiffXSquared += Math.pow(diffX, 2);
+            sumOfDiffYSquared += Math.pow(diffY, 2);
             sumOfDiffXByDiffY += (diffX * diffY);
-        }  
-    }
+        }
+    };
 
     var meanX = 0.0;
     var meanY = 0.0;
@@ -58,6 +58,6 @@
         this.lineEq = "y = " + self.valueB + "x + " + self.valueA;
         this.trendLineData = [[x1, y1, x2, y2]];
 
-    }
+    };
 
 }

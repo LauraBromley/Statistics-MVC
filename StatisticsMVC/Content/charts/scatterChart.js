@@ -4,9 +4,11 @@
 
     scObject.drawScatterChart = function (divId, data, trendLineData, xAxisLabel, yAxisLabel) {
 
+        var maxWidth = Math.min(500, window.innerWidth - 50);
+
         var margin = { top: 20, right: 20, bottom: 50, left: 50 }
-          , width = 500 - margin.left - margin.right
-          , height = 500 - margin.top - margin.bottom;
+          , width = maxWidth - margin.left - margin.right
+          , height = maxWidth - margin.top - margin.bottom;
 
         var x = d3.scale.linear()
                   .domain([0, d3.max(data, function (d) { return d[0]; })])
@@ -70,7 +72,7 @@
         if (trendLineData.length > 0){
 
             g.selectAll("trendline")
-			    .data(trendLineData)
+                .data(trendLineData)
                 .enter()
                     .append("line")
                     .attr("class", "trendline")
